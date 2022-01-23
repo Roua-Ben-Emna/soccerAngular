@@ -1,0 +1,49 @@
+<div class="site-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-6 title-section" style="margin-top: 10%">
+            <h2 class="heading">{{title}}</h2>
+          </div>
+        <div class="col-lg-7">
+          <form [formGroup]="addEditPlayerForm">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="First Name" formControlName="name" value="{{findedPlayer.name}}" [(ngModel)]="findedPlayer.name">
+            </div>
+            <div *ngIf="addEditPlayerForm.controls['name'].invalid && (addEditPlayerForm.controls['name'].touched || addEditPlayerForm.controls['name'].dirty)">
+              <div *ngIf="addEditPlayerForm.controls['name'].errors.required" class="text-danger">
+                  FirstName  is required
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Last Name" formControlName="lastName" value="{{findedPlayer.lastName}}" [(ngModel)]="findedPlayer.lastName">
+            </div>
+            <div *ngIf="addEditPlayerForm.controls['lastName'].invalid && (addEditPlayerForm.controls['lastName'].touched || addEditPlayerForm.controls['lastName'].dirty)">
+              <div *ngIf="addEditPlayerForm.controls['lastName'].errors.required" class="text-danger">
+                  lastName plat is required
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="number" class="form-control" placeholder="Age" formControlName="age" value="{{findedPlayer.age}}" [(ngModel)]="findedPlayer.age">
+            </div>
+            <div *ngIf="addEditPlayerForm.controls['age'].invalid && (addEditPlayerForm.controls['age'].touched || addEditPlayerForm.controls['age'].dirty)">
+              <div *ngIf="addEditPlayerForm.controls['age'].errors.required" class="text-danger">
+                  Age  is required
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Team" formControlName="team" value="{{findedPlayer.team}}" [(ngModel)]="findedPlayer.team">
+            </div>
+            <div *ngIf="addEditPlayerForm.controls['team'].invalid && (addEditPlayerForm.controls['team'].touched || addEditPlayerForm.controls['team'].dirty)">
+              <div *ngIf="addEditPlayerForm.controls['team'].errors.required" class="text-danger">
+                  Team plat is required
+              </div>
+            </div>
+            <div class="form-group">
+              <button href="#" class="btn btn-primary py-3 px-5" (click)="addOrEditPlayer(addEditPlayerForm.value)">{{title}}</button>
+            </div>
+          </form>  
+        </div>
+     
+      </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="site-section bg-dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-6 title-section" style="margin-top: 10%;">
+            <h2 class="heading" style="margin-bottom: 5%">Dashboard Player</h2>
+            <button type="button" class="btn btn-primary py-3 px-5" (click)="Add_Player()">Add Player</button>
+          </div>
+          
+          
+            <table class="table custom-table">
+                <tr>                      
+                    <th>First Name</th>
+                    <th>Last Name</th> 
+                    <th>Age</th>
+                    <th>Team</th> 
+                    <th>Action</th>
+                </tr>
+                <tr *ngFor="let p of myplayers">
+                        <td>{{p.name}}</td>
+                        <td>{{p.lastName}}</td>
+                        <td>{{p.age}}</td>    
+                        <td>{{p.team}}</td>    
+                        <td>
+                            <button type="button" class="btn btn-primary" (click)="displayplayer(p.id)">Display</button> 
+                            <button type="button" class="btn btn-warning" style="color: white;" (click)="editplayer(p.id)">Edit</button> 
+                            <button type="button" class="btn btn-danger" (click)="deleteObject(p.id,'players')">Delete</button>
+                        </td>
+                    
+                </tr>   
+            </table>
+         
+
+        
+      </div>
+    </div>
+  </div> <!-- .site-section -->
